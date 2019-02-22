@@ -1,7 +1,6 @@
 # python-test
 
-The project analysis the NSE index values for NIFTY during a sample time period(could be extended to real time datasets), which in return
-would help new stockholders in making decisions related to stock market   
+The project analysis the NSE index and stock values during a sample time period(could be extended to real time datasets), which in return would help new stockholders in making decisions related to stock market   
 
   --> average closing price fluctuations over weeks.
   --> rolling window methhodology to see data variations.
