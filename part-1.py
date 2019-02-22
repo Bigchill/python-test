@@ -5,6 +5,8 @@ from numpy import *
 from pandas import *
 from scipy import *
 from lxml import *
+from bokeh.plotting import figure, output_file, show
+
  
 sbin = get_history(symbol='SBIN',start=date(2018,1,1),end=date(2019,2,22))  #sample stock
 print(sbin)
@@ -46,3 +48,28 @@ works on each stock/index with an assumption that time series is equally spaced.
 rolling_window(sbin, 10, 75)
 
 
+"""
+
+#Data visualization code having no errors
+#but somehow not workng
+
+SBIN = np.array(sbin['Close'])
+sbin_dates = np.array(sbin.iloc[:,0])
+
+output_file("stocks.html")
+
+p = figure(plot_width=800, plot_height=350, x_axis_type="datetime")
+
+p.circle(sbin_dates, SBIN, size=4, color='darkgrey', alpha=0.2, legend='close')
+p.line(sbin_dates, SBIN, color='blue', legend='Closing Prices')
+
+p.title.text = "sbin closing prices"
+p.legend.location = "top_left"
+p.grid.grid_line_alpha = 0
+p.xaxis.axis_label = 'Date'
+p.yaxis.axis_label = 'Closing Price'
+p.ygrid.band_fill_color = "olive"
+p.ygrid.band_fill_alpha = 0.1
+
+show(p)
+"""
