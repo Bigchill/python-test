@@ -30,7 +30,8 @@ print(mean)
 
 def rolling_window(dataset, size, limit):
 """
-displays data for all n consecutive entries in the dataset(where n = size), up untill the size(window size) is increased to a limit  
+displays data for all n consecutive entries in the dataset(where n = size), up untill the size(window size) is increased to a limit.
+works on each stock/index with an assumption that time series is equally spaced.    
 """
     while size <= limit:
         end = size
